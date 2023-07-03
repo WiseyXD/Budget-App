@@ -13,7 +13,7 @@ function App() {
       <Button className='outline-primary' variant="outline-primary">Add Expense</Button >
     </Stack>
     <div style={{display:'grid',gridTemplateColumns:"repeat(autofill,,minmax(300px , 1fr))", gap:"1rem", alignItems:"flex-start"}}>
-        <BudgetCard name="aryan" max={20000} amount={1000}/>
+        <BudgetCard name="aryan" max={20000} amount={22000} gray/>
     </div>
     </Container>
     
