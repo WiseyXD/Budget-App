@@ -1,25 +1,35 @@
-import { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Stack from 'react-bootstrap/Stack';
-import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button';
-import BudgetCard from './Components/BudgetCard';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Budget from "./Components/Budget";
+import Expense from "./Components/Expense";
+import Remaining from "./Components/Remaining";
+import ExpenseList from "./Components/ExpenseList";
+import ExpenseForm from "./Components/ExpenseForm";
 function App() {
-  return (
-    <Container className='my-4'>
-      <Stack direction="horizontal" gap={3} className='mb-4'>
-      <h1 className='me-auto'>Budget</h1>
-      <Button className='primary' variant='primary'>Add Budget</Button >
-      <Button className='outline-primary' variant="outline-primary">Add Expense</Button >
-    </Stack>
-    <div style={{display:'grid',gridTemplateColumns:"repeat(autofill,,minmax(300px , 1fr))", gap:"1rem", alignItems:"flex-start"}}>
-        <BudgetCard name="aryan" max={20000} amount={22000} gray/>
-    </div>
-    </Container>
-    
-
-
-  )
+	return (
+		<div className="container">
+			<h1 className="mt-3">Budget App</h1>
+			<div className="row mt-3">
+				<div className="col-sm">
+					<Budget />
+				</div>
+				<div className="col-sm">
+					<Expense />
+				</div>
+				<div className="col-sm">
+					<Remaining />
+				</div>
+			</div>
+			<div className="mt-3">
+				<h2>Expenses List</h2>
+				<ExpenseList />
+			</div>
+			<div className="mt-3">
+				<h2>Add Expense</h2>
+				<ExpenseForm />
+			</div>
+		</div>
+	);
 }
 
-export default App
+export default App;
