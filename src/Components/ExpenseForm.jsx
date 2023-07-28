@@ -18,10 +18,13 @@ export default function ExpenseForm() {
 			type: "ADD_EXPENSE",
 			payload: expense,
 		});
+
+		setName("");
+		setCost("");
 	}
 	return (
 		<div>
-			<form>
+			<form onSubmit={(e) => handleSubmit(e)}>
 				<div className="mb-1">
 					<label htmlFor="name" className="form-label"></label>
 					<input
@@ -52,11 +55,7 @@ export default function ExpenseForm() {
 					/>
 				</div>
 
-				<button
-					type="submit"
-					className="btn btn-primary"
-					onSubmit={(e) => handleSubmit(e)}
-				>
+				<button type="submit" className="btn btn-primary">
 					Save
 				</button>
 			</form>
