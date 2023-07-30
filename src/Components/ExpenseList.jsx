@@ -19,6 +19,7 @@ export default function ExpenseList() {
 			return expense.name.toLowerCase().includes(search.toLowerCase());
 		});
 		setFilteredList(filteredArray);
+		console.log(filteredList);
 	}
 	return (
 		<>
@@ -35,7 +36,7 @@ export default function ExpenseList() {
 			</form>
 
 			<ul className="list-group">
-				{expenses.length === 0 ? (
+				{expenses.length === 0 || filteredList.length === 0 ? (
 					<Shimmer />
 				) : (
 					filteredList.map((expense) => {
