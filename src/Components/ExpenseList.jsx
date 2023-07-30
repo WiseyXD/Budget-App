@@ -2,31 +2,37 @@ import React, { useContext, useEffect, useState } from "react";
 import ExpensesItem from "./ExpensesItem";
 import { AppContext } from "../AppContext";
 import Shimmer from "./Shimmer";
+import { BiSearchAlt } from "react-icons/bi";
 export default function ExpenseList() {
 	const { expenses } = useContext(AppContext);
 	const [filteredList, setFilteredList] = useState(expenses);
 	const [search, setSearch] = useState("");
-	console.log(expenses);
-
+	// console.log(expenses);
+	console.log(search);
 	useEffect(() => {
 		setFilteredList(expenses);
 	}, [search]);
 
-	function handleChange(e, expenses) {
-		setSearch(e.target.value);
+	function handleChange(e) {
+		e.preventDefault();
 		const filteredArray = expenses.filter((expense) => {
-			return expense.name.toLowerCase().includes(search);
+			return expense.name.toLowerCase().includes(search.toLowerCase());
 		});
 		setFilteredList(filteredArray);
 	}
 	return (
 		<>
-			<input
-				type="text"
-				placeholder="Search Item"
-				onChange={(e, expenses) => handleChange(e, expenses)}
-				className="mb-3 container"
-			/>
+			<form onSubmit={handleChange} className="mb-3 container">
+				<input
+					type="text"
+					placeholder="Search Item"
+					onChange={(e) => setSearch(e.target.value)}
+				/>
+				<button type="submit">
+					<BiSearchAlt />
+				</button>
+			</form>
+
 			<ul className="list-group">
 				{expenses.length === 0 ? (
 					<Shimmer />
