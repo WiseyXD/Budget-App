@@ -22,13 +22,14 @@ export default function ExpenseList() {
 	}
 	return (
 		<>
-			<form onSubmit={handleChange} className="mb-3 container">
+			<form onSubmit={handleChange} className="mb-3 container row">
 				<input
 					type="text"
 					placeholder="Search Item"
 					onChange={(e) => setSearch(e.target.value)}
+					className=" col"
 				/>
-				<button type="submit">
+				<button type="submit" className="col-2 p-0 m-0">
 					<BiSearchAlt />
 				</button>
 			</form>

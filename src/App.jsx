@@ -27,7 +27,6 @@ function App() {
 					<ExpenseList />
 				</div>
 				<div className="mt-3">
-					<h2>Add Expense</h2>
 					<ExpenseForm />
 				</div>
 			</div>

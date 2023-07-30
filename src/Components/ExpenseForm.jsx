@@ -24,9 +24,10 @@ export default function ExpenseForm() {
 	}
 	return (
 		<div>
+			<h2>Add Expense</h2>
 			<form onSubmit={(e) => handleSubmit(e)}>
-				<div className="mb-1">
-					<label htmlFor="name" className="form-label"></label>
+				<div className="">
+					<label htmlFor="name" className="form-label m-0"></label>
 					<input
 						type="text"
 						className="form-control"
@@ -37,7 +38,7 @@ export default function ExpenseForm() {
 						placeholder="Name of the Expense"
 						required
 					/>
-					<div id="nameHelp" className="form-text">
+					<div id="nameHelp" className="form-text m-0">
 						Aryan be under budget
 					</div>
 				</div>

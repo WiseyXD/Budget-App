@@ -5,10 +5,10 @@ export default function ExpensesItem({ name, cost, id }) {
 	const { dispatch } = useContext(AppContext);
 
 	function handleDelete(id) {
-		dispatch({
-			type: "DELETE_EXPENSE",
-			payload: id,
-		});
+		// dispatch({
+		// 	type: "DELETE_EXPENSE",
+		// 	payload: id,
+		// });
 	}
 	return (
 		<li className="list-group-item">
