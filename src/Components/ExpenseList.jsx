@@ -7,11 +7,11 @@ export default function ExpenseList() {
 	const { expenses } = useContext(AppContext);
 	const [filteredList, setFilteredList] = useState(expenses);
 	const [search, setSearch] = useState("");
-	// console.log(expenses);
+	console.log(expenses);
 	console.log(search);
 	useEffect(() => {
 		setFilteredList(expenses);
-	}, [search]);
+	}, [search, expenses]);
 
 	function handleChange(e) {
 		e.preventDefault();

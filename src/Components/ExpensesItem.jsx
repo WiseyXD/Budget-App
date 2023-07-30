@@ -4,11 +4,11 @@ import { AppContext } from "../AppContext";
 export default function ExpensesItem({ name, cost, id }) {
 	const { dispatch } = useContext(AppContext);
 
-	function handleDelete(id) {
-		// dispatch({
-		// 	type: "DELETE_EXPENSE",
-		// 	payload: id,
-		// });
+	function handleDelete() {
+		dispatch({
+			type: "DELETE_EXPENSE",
+			payload: id,
+		});
 	}
 	return (
 		<li className="list-group-item">
@@ -20,7 +20,7 @@ export default function ExpensesItem({ name, cost, id }) {
 						<MdDeleteForever
 							fontSize={19}
 							className="mt-1 mb-1"
-							onClick={(id) => handleDelete(id)}
+							onClick={handleDelete}
 						/>
 					</div>
 				</div>
